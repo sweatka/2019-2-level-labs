@@ -12,7 +12,7 @@ def initialize_edit_matrix(edit_matrix: tuple, add_weight: int, remove_weight: i
 
 
 def minimum_value(numbers: tuple) -> int:
-    pass
+    return min(numbers)
 
 
 def fill_edit_matrix(edit_matrix: tuple,
