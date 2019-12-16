@@ -84,8 +84,7 @@ class TfIdfCalculator:
             return ()
         tf_idf_for_document = self.tf_idf_values[document_index]
         if word in tf_idf_for_document:
-            document_tf_idf_keys = tf_idf_for_document.get
-            tf_idf_rated = sorted(tf_idf_for_document, key=document_tf_idf_keys, reverse=True)
+            tf_idf_rated = sorted(tf_idf_for_document, key=tf_idf_for_document.get, reverse=True)
             rating = tf_idf_rated.index(word)
             return tf_idf_for_document[word], rating
 
