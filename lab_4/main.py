@@ -58,14 +58,14 @@ class TfIdfCalculator:
                 if isinstance(text_i, list) or text_i is not None:
                     for word in text_i:
                         if isinstance(word, str) and word not in self.idf_values:
-                            number_in_one_text = 0
-                            number_in_all_texts = len(self.corpus)
+                            number_in_texts = 0
+                            number_all_texts = len(self.corpus)
                             for text_j in self.corpus:
                                 if isinstance(text_j, list) and word in text_j:
-                                    number_in_one_text += 1
+                                    number_in_texts += 1
                                 elif not isinstance(text_j, list) or text_j is None:
-                                    number_in_all_texts -= 1
-                            div = number_in_all_texts / number_in_one_text
+                                    number_all_texts -= 1
+                            div = number_all_texts / number_in_texts
                             self.idf_values[word] = math.log(div)
 
 
